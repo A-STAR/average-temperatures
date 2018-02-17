@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AverageTemperaturesService } from './shared/average-temperatures.service';
 
-import { TemperatureMap } from './shared/temperature-map.interface';
+import { TemperatureMap } from '../shared';
 
 @Component({
   selector: 'average-temperatures',
