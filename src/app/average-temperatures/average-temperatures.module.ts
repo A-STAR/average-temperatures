@@ -4,6 +4,8 @@ import { AverageTemperaturesRoutingModule } from './average-temperatures-routing
 
 import { SharedModule } from '../shared/shared.module';
 
+import { AverageTemperaturesService } from './shared/average-temperatures.service';
+
 import { AverageTemperaturesComponent } from './average-temperatures.component';
 
 @NgModule({
@@ -11,6 +13,7 @@ import { AverageTemperaturesComponent } from './average-temperatures.component';
     AverageTemperaturesRoutingModule,
     SharedModule
   ],
-  declarations: [AverageTemperaturesComponent]
+  declarations: [AverageTemperaturesComponent],
+  providers: [AverageTemperaturesService]
 })
 export class AverageTemperaturesModule { }

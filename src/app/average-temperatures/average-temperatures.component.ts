@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AverageTemperaturesService } from './shared/average-temperatures.service';
+
 @Component({
   selector: 'app-average-temperatures',
   templateUrl: './average-temperatures.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AverageTemperaturesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private averageTemperatures: AverageTemperaturesService) { }
 
   ngOnInit() {
+    this.averageTemperatures.temperature$.subscribe(console.log);
   }
 
 }
