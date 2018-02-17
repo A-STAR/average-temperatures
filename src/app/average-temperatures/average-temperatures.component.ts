@@ -5,7 +5,7 @@ import { AverageTemperaturesService } from './shared/average-temperatures.servic
 import { TemperatureMap } from './shared/temperature-map.interface';
 
 @Component({
-  selector: 'app-average-temperatures',
+  selector: 'average-temperatures',
   templateUrl: './average-temperatures.component.html',
   styleUrls: ['./average-temperatures.component.sass']
 })
