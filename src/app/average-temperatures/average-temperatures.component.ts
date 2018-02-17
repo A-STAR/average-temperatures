@@ -11,12 +11,20 @@ import { TemperatureMap } from './shared/temperature-map.interface';
 })
 export class AverageTemperaturesComponent implements OnInit {
 
-  temperatureMaps: TemperatureMap[];
+  temperatureMaps: TemperatureMap[] = [
+    {color: '#0000ff'},
+    {color: '#ff0000'}
+  ];
 
   constructor(private averageTemperatures: AverageTemperaturesService) { }
 
   ngOnInit() {
-    this.averageTemperatures.temperature$.subscribe(console.log);
+
+    this.temperatureMaps.map(element => this.averageTemperatures
+      .temperature$
+      .subscribe((response: number) => element.temperature = response)
+    );
+
   }
 
 }
