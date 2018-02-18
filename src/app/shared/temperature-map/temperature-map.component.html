@@ -1,3 +1,13 @@
-<p>
-  {{ temperatureMap.temperature }}, {{ temperatureMap.color }}
-</p>
+<svg [class.triangle]="triangle" [attr.width]="mapWidth" [attr.height]="mapHeight">
+  <defs>
+    <linearGradient [id]="gradientId">
+      <stop offset="0%" stop-color="#ffffff"></stop>
+      <stop offset="100%" [attr.stop-color]="temperatureMap.color"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="100%" [attr.height]="rectHeight" [attr.fill]="progressFill"></rect>
+  <g stroke="#000000">
+    <line [attr.x1]="progress" y1="0" [attr.x2]="progress" [attr.y2]="progressIndent" [attr.stroke-width]="pointerWidth"></line>
+    <polygon [attr.points]="trianglePoints"></polygon>
+  </g>
+</svg>

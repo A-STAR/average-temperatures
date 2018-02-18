@@ -1,1 +1,1 @@
-<temperature-map *ngFor="let temperatureMap of temperatureMaps" [temperatureMap]="temperatureMap"></temperature-map>
+<temperature-map *ngFor="let temperatureMap of temperatureMaps$ | async; let i = index" [temperatureMap]="temperatureMap" [i]="i"></temperature-map>
