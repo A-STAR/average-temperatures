@@ -27,9 +27,9 @@ export class TemperatureMapComponent implements OnChanges, OnInit {
   constructor() { }
 
   ngOnChanges() {
-    if (this.temperatureMap.temperature === undefined) {
-      this.temperatureMap.temperature = 50;
-    }
+    // if (this.temperatureMap.temperature === undefined) {
+    //   this.temperatureMap.temperature = 50;
+    // }
 
     this.rectHeight = this.mapHeight - 7;
 

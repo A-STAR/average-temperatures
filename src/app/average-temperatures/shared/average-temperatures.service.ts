@@ -31,7 +31,7 @@ export class AverageTemperaturesService {
       map(response => this.temperatureMaps.map((element, index) =>
         Object.assign({ }, element, {temperature: response[index]})
       )),
-      startWith(this.temperatureMaps)
+      // startWith(this.temperatureMaps)
     );
   }
 
