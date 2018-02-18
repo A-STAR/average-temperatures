@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs/Observable';
+
 import { AverageTemperaturesService } from './shared/average-temperatures.service';
 
 import { TemperatureMap } from '../shared';
@@ -11,20 +13,12 @@ import { TemperatureMap } from '../shared';
 })
 export class AverageTemperaturesComponent implements OnInit {
 
-  temperatureMaps: TemperatureMap[] = [
-    {color: '#0000ff'},
-    {color: '#ff0000'}
-  ];
+  temperatureMaps$: Observable<TemperatureMap[]>;
 
   constructor(private averageTemperatures: AverageTemperaturesService) { }
 
   ngOnInit() {
-
-    this.temperatureMaps.map(element => this.averageTemperatures
-      .temperature$
-      .subscribe((response: number) => element.temperature = response)
-    );
-
+    this.temperatureMaps$ = this.averageTemperatures.temperatureMaps$;
   }
 
 }
