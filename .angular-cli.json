@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "",
       "styles": [
+        "styles/bootstrap-reboot/bootstrap-reboot.css",
         "styles.sass"
       ],
       "scripts": [],
