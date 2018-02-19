@@ -11,3 +11,72 @@
     <polygon [attr.points]="trianglePoints"></polygon>
   </g>
 </svg>
+
+<form novalidate [formGroup]="form">
+
+  <label for="map-width"><small>{{ form.get('width').value }}px</small> Map Width</label>
+
+  <input type="range" id="map-width" min="100" max="1000" step="1" list="map-width-list" formControlName="width">
+
+  <datalist id="map-width-list">
+    <option value="100" label="100px">
+    <option value="200">
+    <option value="300">
+    <option value="400">
+    <option value="500" label="500px">
+    <option value="600">
+    <option value="700">
+    <option value="800">
+    <option value="900">
+    <option value="1000" label="1000px">
+  </datalist>
+
+  <label for="map-height"><small>{{ form.get('height').value - 7 }}px</small> Map Height</label>
+
+  <input type="range" id="map-height" min="12" max="37" step="1" list="map-height-list" formControlName="height">
+
+  <datalist id="map-height-list">
+    <option value="12" label="5px">
+    <option value="17">
+    <option value="22" label="15px">
+    <option value="27">
+    <option value="32">
+    <option value="37" label="30px">
+  </datalist>
+
+  <label for="progress"><small>{{ form.get('progress').value }}%</small> Progress</label>
+
+  <input type="range" id="progress" min="0" max="100" step="1" list="progress-list" formControlName="progress">
+
+  <datalist id="progress-list">
+    <option value="0" label="0%">
+    <option value="10">
+    <option value="20">
+    <option value="30">
+    <option value="40">
+    <option value="50" label="50%">
+    <option value="60">
+    <option value="70">
+    <option value="80">
+    <option value="90">
+    <option value="100" label="100%">
+  </datalist>
+
+  <label for="pointer-width"><small>{{ form.get('pointer').value }}px</small> Pointer Width</label>
+
+  <input type="range" id="pointer-width" min="0.01" max="5" step="0.01" list="pointer-width-list" formControlName="pointer">
+
+  <datalist id="pointer-width-list">
+    <option value="0.01" label="0.01px">
+    <option value="1">
+    <option value="2">
+    <option value="3">
+    <option value="4">
+    <option value="5" label="5px">
+  </datalist>
+
+  <label for="triangle-check"><small>{{ form.get('triangle').value ? 'on' : 'off' }}</small> Pointer Triangle</label>
+
+  <input type="checkbox" id="triangle-check" list="pointer-width-list" formControlName="triangle">
+
+</form>
