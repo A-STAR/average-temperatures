@@ -14,11 +14,11 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "strictNullChecks": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictNullChecks": true,
     "preserveWhitespaces": false
   }
 }
